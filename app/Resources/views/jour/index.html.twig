@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% set title="Journée internationalle" %}
+
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <div class="box">
+        <div class="box-body">
+
+
+            <table class="table table-striped table-bordered table-hover" id="datatable">
+
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image name</th>
+                <th>Image size</th>
+                <th>Updated at</th>
+                <th>Nom de jour</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jour in jours %}
+            <tr>
+                <td><a href="{{ path('jour_show', { 'id': jour.id }) }}">{{ jour.id }}</a></td>
+                <td><img src="{{ asset('uploads/jour/' ~ jour.imageName) }}" width="90"></td>
+                <td>{{ jour.imageSize }}</td>
+                <td>{% if jour.updatedAt %}{{ jour.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ jour.nomjour }}</td>
+                <td>{% if jour.date %}{{ jour.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ path('jour_show', { 'id': jour.id }) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a  href="{{ path('jour_edit', { 'id': jour.id }) }}">modifier</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('jour_new') }}" class="btn btn-info" >Créer</a>
+
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+{% endblock %}
+
+

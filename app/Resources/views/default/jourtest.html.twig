@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <!-- animate CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/animate.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/owl.theme.default.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/jquery.timepicker.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateJour/css/style.css') }}">
+
+
+
+
+</head>
+<body class="bg-shape">
+
+<!-- aboupart start-->
+
+<section class="ftco-section ftco-services">
+    <div class="container">
+        <div class="row">
+
+
+            {% for jour in jours %}
+
+            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="align-items-center mb-4">
+
+                        <img src=" {{ asset('uploads/jour/' ~ jour.imageName) }}" width="150px" height="150px" class="border-dark rounded-circle" alt="Cinque Terre">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading">{{ jour.nomjour }}</h3>
+                        <p class="center">{% if jour.date %}{{ jour.date|date('Y-m-d') }}{% endif %}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<script src="{{ asset('assets/templateJour/js/jquery.min.js') }}"></script>
+<!-- custom js -->
+<script src="{{ asset('assets/templateJour/js/custom.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/aos.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/jquery.animateNumber.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/bootstrap-datepicker.js') }}"></script>
+
+<script src="{{ asset('assets/templateJour/js/jquery.timepicker.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/scrollax.min.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/main.js') }}"></script>
+<script src="{{ asset('assets/templateJour/js/main.js') }}"></script>
+
+</body>
+</html>

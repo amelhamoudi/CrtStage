@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{{asset('assets/templatemedia/vendor/fontawesome-free/css/all.min.css')}}" type="text/css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{{asset('assets/templatemedia/vendor/magnific-popup/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('assets/templatemedia/css/creative.min.css')}}">
+
+
+</head>
+
+<body>
+<header id="slider-area">
+    <nav class="navbar navbar-expand-md fixed-top bg-white">
+        <img src="{{ asset('assets/images/test.png') }}" width="170px" height="110px" alt="">
+
+                <button  class=" btn btn-danger btn-rounded btn-lg" type="button"  style="margin-left: 1200px" >
+                    <i aria-hidden="true"></i><a style="color:white"  href="{{path('homepage')}}">Accueil</a></button>
+
+
+
+    </nav> </header>
+<br> <br> <br> <br> <br>
+            </div>
+        </div>
+    </nav>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+</nav>
+
+
+
+
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+
+    <div class="container-fluid p-0">
+
+        <div class="row no-gutters">
+            {% for event in events %}
+
+            <div class="col-lg-4 col-sm-6">
+
+                <a class="portfolio-box" href="{{ asset('uploads/event/' ~ event.imageName) }}">
+
+                    <img width="500px" height="300px" src="{{ asset('uploads/event/' ~ event.imageName) }}">
+                </a>
+<br>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Bootstrap core JavaScript -->
+
+<script src="{{asset('assets/templatemedia/vendor/jquery/jquery.min.js')}}"></script>
+
+
+<script src="{{asset('assets/templatemedia/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- Plugin JavaScript -->
+
+<script src="{{asset('assets/templatemedia/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+<script src="{{asset('assets/templatemedia/vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+
+
+<!-- Custom scripts for this template -->
+
+<script src="{{asset('assets/templatemedia/js/creative.min.js')}}"></script>
+
+
+</body>
+</html>

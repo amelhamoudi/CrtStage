@@ -1,0 +1,371 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+
+
+/**
+ * Event
+ *
+ * @ORM\Table(name="event")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EventRepository")
+ * @Vich\Uploadable
+ */
+
+class Event
+{
+    // ...
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+     /**
+         * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="event")
+         */
+        private $categorie;
+
+
+ /**
+         * @ORM\ManyToOne(targetEntity="Gallerie", inversedBy="event")
+         */
+        private $gallerie;
+
+
+
+     // ... other fields
+
+        /**
+         * NOTE: This is not a mapped field of entity metadata, just a simple property.
+         *
+         * @Vich\UploadableField(mapping="event_image", fileNameProperty="imageName", size="imageSize")
+         *
+         * @var File
+         */
+        private $imageFile;
+
+        /**
+         * @ORM\Column(type="string", length=255)
+         *
+         * @var string
+         */
+        private $imageName;
+
+        /**
+         * @ORM\Column(type="integer")
+         *
+         * @var integer
+         */
+        private $imageSize;
+
+        /**
+         * @ORM\Column(type="datetime")
+         *
+         * @var \DateTime
+         */
+        public $updatedAt;
+
+        /**
+
+         * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
+         */
+        public function setImageFile(?File $imageFile = null): void
+        {
+            $this->imageFile = $imageFile;
+
+            if (null !== $imageFile) {
+                // It is required that at least one field changes if you are using doctrine
+                // otherwise the event listeners won't be called and the file is lost
+                $this->updatedAt = new \DateTimeImmutable();
+            }
+        }
+
+        public function getImageFile(): ?File
+        {
+            return $this->imageFile;
+        }
+
+        public function setImageName(?string $imageName): void
+        {
+            $this->imageName = $imageName;
+        }
+
+        public function getImageName(): ?string
+        {
+            return $this->imageName;
+        }
+
+        public function setImageSize(?int $imageSize): void
+        {
+            $this->imageSize = $imageSize;
+        }
+
+        public function getImageSize(): ?int
+        {
+            return $this->imageSize;
+        }
+
+
+
+
+
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomEvent", type="string", length=255)
+     */
+    private $nomEvent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DescriptionEvent", type="string", length=255)
+     */
+    private $descriptionEvent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieuEvent", type="string", length=255)
+     */
+    private $lieuEvent;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateDebut", type="datetime")
+     */
+    private $dateDebut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateFin", type="datetime")
+     */
+    private $dateFin;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+
+    /**
+     * Set nomEvent
+     *
+     * @param string $nomEvent
+     *
+     * @return Evenement
+     */
+    public function setNomEvent($nomEvent)
+    {
+        $this->nomEvent = $nomEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get nomEvent
+     *
+     * @return string
+     */
+    public function getNomEvent()
+    {
+        return $this->nomEvent;
+    }
+
+    /**
+     * Set descriptionEvent
+     *
+     * @param string $descriptionEvent
+     *
+     * @return Evenement
+     */
+    public function setDescriptionEvent($descriptionEvent)
+    {
+        $this->descriptionEvent = $descriptionEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionEvent
+     *
+     * @return string
+     */
+    public function getDescriptionEvent()
+    {
+        return $this->descriptionEvent;
+    }
+
+    /**
+     * Set lieuEvent
+     *
+     * @param string $lieuEvent
+     *
+     * @return Evenement
+     */
+    public function setLieuEvent($lieuEvent)
+    {
+        $this->lieuEvent = $lieuEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get lieuEvent
+     *
+     * @return string
+     */
+    public function getLieuEvent()
+    {
+        return $this->lieuEvent;
+    }
+
+    /**
+     * Set dateDebut
+     *
+     * @param \DateTime $dateDebut
+     *
+     * @return Evenement
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDebut
+     *
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * Set dateFin
+     *
+     * @param \DateTime $dateFin
+     *
+     * @return Evenement
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    /**
+     * Get dateFin
+     *
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Event
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     *
+     * @return Event
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+
+
+
+ /**
+     * Set gallerie
+     *
+     * @param \AppBundle\Entity\Gallerie $gallerie
+     *
+     * @return Event
+     */
+    public function setGallerie(\AppBundle\Entity\Gallerie $gallerie = null)
+    {
+        $this->gallerie = $gallerie;
+
+        return $this;
+    }
+
+    /**
+     * Get gallerie
+     *
+     * @return \AppBundle\Entity\Gallerie
+     */
+    public function getGallerie()
+    {
+        return $this->gallerie;
+    }
+
+
+
+}

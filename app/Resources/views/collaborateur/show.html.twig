@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher collab" %}
+{% block content %}
+
+    <div class="box">
+        <div class="box-body">
+
+
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <img src="{{ asset('uploads/collaborateur/' ~ collaborateur.imageName) }}" width="120px">
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ collaborateur.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom du collaborateur</th>
+                    <td>{{ collaborateur.nomCollaborateur }}</td>
+                </tr>
+
+
+
+                <tr>
+                    <th>Email du collaborateur</th>
+                    <td>{{ collaborateur.emailCollaborateur }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone du collaborateur</th>
+                    <td>{{ collaborateur.telCollaborateur }}</td>
+                </tr>
+                <tr>
+                    <th>Spécification</th>
+                    <td>{{ collaborateur.specification }}</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+            <a class="btn btn-success" href="{{ path('collaborateur_edit', { 'id': collaborateur.id }) }}">Modifier</a>
+            {{ form_start(delete_form) }}
+            <input type="submit" class="btn btn-danger delete" value="Supprimer">
+            {{ form_end(delete_form) }}
+
+        </div>
+    </div>
+{% endblock %}

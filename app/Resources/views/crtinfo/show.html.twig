@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher " %}
+{% block content %}
+
+<div class="box">
+    <div class="box-body">
+        <h3>info</h3>
+
+
+        <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ crtInfo.id }}</td>
+            </tr>
+            <tr>
+                <th>Nbrformation</th>
+                <td>{{ crtInfo.nbrFormation }}</td>
+            </tr>
+            <tr>
+                <th>Nbrmembre</th>
+                <td>{{ crtInfo.nbrMembre }}</td>
+            </tr>
+            <tr>
+                <th>Nbrvolontaire</th>
+                <td>{{ crtInfo.nbrVolontaire }}</td>
+            </tr>
+            <tr>
+                <th>Nbrjaime</th>
+                <td>{{ crtInfo.nbrJaime }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('crtinfo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('crtinfo_edit', { 'id': crtInfo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

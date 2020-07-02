@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher la liste des formations" %}
+{% block content %}
+
+<div class="box">
+    <div class="box-body">
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomformation</th>
+                <td>{{ formation.nomformation }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <td><img src="{{ asset('uploads/formation/' ~ formation.imageName) }}"> </td>
+            </tr>
+            <tr>
+                <th>Imagesize</th>
+                <td>{{ formation.imageSize }}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if formation.updatedAt %}{{ formation.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Horaire</th>
+                <td>{% if formation.horaire %}{{ formation.horaire|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ formation.description }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ formation.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Nbrplace</th>
+                <td>{{ formation.nbrplace }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('formation_edit', { 'id': formation.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div> </div>
+{% endblock %}

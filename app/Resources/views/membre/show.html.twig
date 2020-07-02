@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher la liste de tous les membres" %}
+{% block content %}
+
+<div class="box">
+    <div class="box-body">
+        <h3>Membre</h3>
+
+        <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ membre.id }}</td>
+            </tr>
+            <tr>
+                <th>Imagesize</th>
+                <td>{{ membre.imageSize }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <img src="{{ asset('uploads/membre/' ~ membre.imageName) }}" width="90">
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if membre.updatedAt %}{{ membre.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ membre.nom }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ membre.poste }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('membre_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('membre_edit', { 'id': membre.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+</div>
+
+{% endblock %}

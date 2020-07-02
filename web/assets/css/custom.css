@@ -1,0 +1,109 @@
+html, body {
+    height: initial
+}
+.vich-image img {
+    width: 300px;
+    display: block;
+}
+.list-group-item p:first-child {
+    margin-left: 10px;
+}
+th{
+  font-weight: 400
+}
+.skin-blue-light .main-header .logo {
+    background-color:  #ea0e0e;
+}
+.login-box-body, .register-box-body {
+    padding: 40px 20px;
+}
+.auth-bar{
+    background: #fff;
+    padding: 2px 10px;
+}
+.radio label, .checkbox label {
+    padding-right: 0
+}
+.form-control {
+    padding: 0 12px;
+ }
+
+
+#calendar .datepicker,#calendar table{
+	width:100%
+}
+
+.select2{
+    width: 100% !important;
+}
+
+
+.list-group-item p{
+   display:inline 
+}
+.list-group-item p:first-child{
+	font-weight: bold;
+}
+.select2-results__option {
+    text-align: right;
+}
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    display: none;
+}
+table tfoot th:last-child{
+display: none;
+}
+.report tfoot th:last-child{
+display: block;
+}
+
+
+@media screen and (max-width: 500px){
+.dataTables_length{
+float:none;
+}
+}
+.filter,.form-control,.table-bordered,.dt-button,.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #e4e4e4;
+}
+
+#datatable ul{
+    list-style: none;
+    padding: 0;
+}
+
+#table_wrapper .row:first-child{
+    display: flex
+}
+.dropdown-menu{
+    min-width: 100px
+}
+
+.btn-delete{
+    margin-left: 10px !important;
+}
+.datepicker{
+    z-index: 99999999 !important;
+}
+
+.error-page {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+.error-page > .error-content {
+    margin-left: 0;
+}
+
+.delete{
+  margin-top: 10px;
+  float: right;
+}
+
+.btn-success{
+    float: left;
+    margin: 10px 10px 0 0;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a {
+    white-space: initial;
+}

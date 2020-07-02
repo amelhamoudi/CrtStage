@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/nivo-lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/color-switcher.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/menu_sideslide.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/responsive.css') }}">
+
+</head>
+<body>
+
+<section id="portfolios" class="section">
+    <!-- Container Starts -->
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Nos Evenements </h2>
+            <span>Works</span>
+            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
+                debitis.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Portfolio Controller/Buttons -->
+                <div class="controls text-center">
+                    <a class="filter active btn btn-common btn-effect" data-filter="all">
+                        All
+                    </a>
+                    {% for categorie in categories %}
+                        <a class="filter btn btn-common btn-effect" data-filter=".{{ categorie.nomCategorie }}">
+                            {{ categorie.nomCategorie }}
+                        </a>
+                    {% endfor %}
+                </div>
+                <!-- Portfolio Controller/Buttons Ends-->
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Portfolio Recent Projects -->
+    <div id="portfolio" class="row">
+        {% for event in events %}
+            <div class="col-lg-4 col-md-6 col-xs-12 mix  {{event.categorie}}">
+                <div class="portfolio-item">
+                    <div class="shot-item">
+                        <img src="{{ asset('uploads/event/' ~ event.imageName) }}" alt="">
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a class="lightbox" src="{{ asset('uploads/event/' ~ event.imageName) }}"><i
+                                                    class="lni-zoom-in item-icon"></i></a>
+                                    </div>
+                                    <a href="{{  path('Media2page') }}">View Project</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+    </div>
+    <!-- Container Ends -->
+</section>
+
+
+<script src="{{ asset('assets/template2/js/jquery-min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/classie.js') }}"></script>
+<script src="{{ asset('assets/template2/js/color-switcher.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.mixitup.js') }}"></script>
+<script src="{{ asset('assets/template2/js/nivo-lightbox.js') }}"></script>
+<script src="{{ asset('assets/template2/js/owl.carousel.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.nav.js') }}"></script>
+<script src="{{ asset('assets/template2/js/scrolling-nav.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/wow.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.vide.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/form-validator.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/contact-form-script.js') }}"></script>
+<script src="{{ asset('assets/template2/js/main.js') }}"></script>
+
+
+<!-- ================ start footer Area ================= -->
+
+</body>
+</html>

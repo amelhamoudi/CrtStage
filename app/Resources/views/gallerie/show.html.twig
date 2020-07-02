@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher La liste de gallerie" %}
+{% block content %}
+
+    <div class="box">
+        <div class="box-body">
+
+
+
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ gallerie.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nomgallerie</th>
+                    <td>{{ gallerie.nomGallerie }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <a class="btn btn-success" href="{{ path('gallerie_edit', { 'id': gallerie.id }) }}">Modifier</a>
+            {{ form_start(delete_form) }}
+            <input type="submit" class="btn btn-danger delete" value="Supprimer">
+            {{ form_end(delete_form) }}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/fontawesome/css/all.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/themify-icons/themify-icons.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/linericon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/owl-carousel/owl.theme.default.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/owl-carousel/owl.carousel.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/flat-icon/font/flaticon.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/vendors/nice-select/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templateformation/css/style.css') }}">
+
+</head>
+<body class="bg-shape">
+
+<!--================Blog section Start =================-->
+<section id="formation" class="p-0">
+
+<section class="section bg-gray">
+    <div class="container">
+        <div class="section-intro text-center ">
+          <br> <br> <br> <br>  <h2>Notre Programme</h2>
+        </div>
+        <br>
+
+        <div class="row">
+            {% for formation in formations %}
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+
+                <div width="250px" height="250px" class="card-blog">
+                    <img class="card-img rounded-0" src="{{ asset('uploads/formation/' ~ formation.imageName) }}"  width="250px" height="250px" alt="">
+                    <div class="card-blog-body">
+                        <a href="#">
+                            <h4>{{ formation.nomformation }}</h4>
+                        </a>
+                        <ul class="card-blog-info">
+                            <li><a href="#"><span class="align-middle"><i class="ti-notepad"></i></span>{% if formation.horaire %}{{ formation.horaire|date('Y-m-d H:i:s') }}{% endif %}</a></li>
+                            <li><a href="#"><span class="align-middle"><i class="ti-comments-smiley"></i></span>{{ formation.nbrplace }} places</a></li>
+                        </ul>
+                        <p>{{ formation.description }}</p>
+
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<!--================Blog section End =================-->
+
+
+
+
+</section>
+
+
+<script src="{{ asset('assets/templateformation/vendors/jquery/jquery-3.2.1.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/vendors/bootstrap/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/vendors/nice-select/jquery.nice-select.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/js/jquery.ajaxchimp.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/js/mail-script.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/js/skrollr.min.js') }}"></script>
+
+<script src="{{ asset('assets/templateformation/js/main.js') }}"></script>
+</body>
+</html>

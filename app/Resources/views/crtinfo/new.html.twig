@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% set title="Ajouter des nouveaux informations" %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+
+    <h1>Crtinfo creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('crtinfo_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

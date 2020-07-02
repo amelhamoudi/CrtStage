@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> الهيئة المحلية للهلال الاحمر التونسي بالزهراء </title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/line-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/nivo-lightbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/color-switcher.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/menu_sideslide.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/responsive.css') }}">
+
+
+
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/responsive.css') }}">
+    <!-- Responsive CSS -->
+
+    <link rel="stylesheet" href="{{ asset('assets/template2/css/responsive.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/template1/vendor/bootstrap/css/bootstrap.min.css') }}"
+          rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{{ asset('assets/template1/vendor/fontawesome-free/css/all.min.css') }}"
+          rel="stylesheet">
+         
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ asset('assets/template1/css/agency.min.css') }}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/owl.carousel.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/style2.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/responsive.css') }}">
+
+
+</head>
+
+<body>
+
+<!-- Header Section Start -->
+<header id="slider-area">
+    <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+        <img src="{{ asset('assets/images/test.png') }}" width="160px" height="100px" alt="">
+        <div class="container">
+
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto w-120 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="#slider-area">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#intro">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#event">Actions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#equipe">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#formation">Programme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#collab">Collaborateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{path('Media2page')}}">Gallerie</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{path('event_index')}}">EspaceAdmin</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <button  class="pl-sm-4 btn btn-danger btn-rounded btn-lg" type="button" id="like">
+                    <i class="fas fa-heart ml-2" aria-hidden="true"></i>j'aime</button>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Main Carousel Section -->
+    <div id="carousel-area">
+        <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-slider" data-slide-to="1"></li>
+                <li data-target="#carousel-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/1.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/2.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/3.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/4.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/5.jpg') }}" width="100%" height="590px"  alt="">
+
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/6.jpg') }}" width="100%" height="590px" alt="">
+
+                </div>
+
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/7.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/8.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/9.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+                <div class="carousel-item">
+                    <br> <br> <br>
+                    <img src="{{ asset('assets/template1/img/header/22.jpg') }}" width="100%" height="590px" alt="">
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+                <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    
+
+    <!-- Features Section Start -->
+
+</header>
+
+{% include 'default/jour.html.twig' %}
+
+
+{% include 'default/jourtest.html.twig' %}
+
+<!-- Start Video promo Section -->
+<section class="video-promo section"  >
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-10">
+                <div class="video-promo-content text-center">
+                    <a href="https://www.youtube.com/watch?v=fdvOyK1E2zU" class="video-popup"><i
+                                class="lni-film-play"></i></a>
+                    <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Notre vidéo
+                        d'introduction</h2>
+                    <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">
+                        En savoir plus sur nous, ce n'est que 30 minutes </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Video Promo Section -->
+
+
+<!-- Portfolio Section -->
+<section id="event" class="section">
+    <!-- Container Starts -->
+    <div class="container">
+        <div class="section-header">
+            <br><br> <br>
+            <h2>Nos Actions </h2>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Portfolio Controller/Buttons -->
+                <div class="controls text-center">
+                    <a class="filter active btn btn-common btn-effect" data-filter="all">
+                        All
+                    </a>
+                    {% for categorie in categories %}
+                        <a class="filter btn btn-common btn-effect" data-filter=".{{ categorie.nomCategorie }}">
+                            {{ categorie.nomCategorie }}
+                        </a>
+                    {% endfor %}
+                </div>
+                <!-- Portfolio Controller/Buttons Ends-->
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Portfolio Recent Projects -->
+    <div id="portfolio" class="row">
+        {% for event in events %}
+            <div class="col-lg-4 col-md-6 col-xs-12 mix  {{event.categorie}}">
+                <div class="portfolio-item gallery" data-id="{{event.id}}">
+                    <div class="shot-item">
+                        <img src="{{ asset('uploads/event/' ~ event.imageName) }}" alt="">
+                        <div class="single-content">
+                            <div class="fancy-table">
+                                <div class="table-cell">
+                                    <div class="zoom-icon">
+                                        <a href="#"><i class="lni-zoom-in item-icon"></i><br><small>Voir détails</small></a>
+                                    </div>
+                                 
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="gallery-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class=" modal-title"></h5>
+        <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h2  class="title text-danger"></h2>
+       <p class="description"></p>
+       <div class="row"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Container Ends -->
+</section>
+<!-- Portfolio Section Ends -->
+<!-- Counter Section Start -->
+<div class="counters section bg-defult">
+    <div class="container">
+        <div class="row">
+            {% for crtInfo in crtInfos %}
+
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="facts-item">
+                    <div class="icon">
+                        <i class="lni-graduation"></i>
+                    </div>
+                    <div class="fact-count">
+                        <h3>{{ crtInfo.nbrFormation }}</h3>
+                        <h4>Formations</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="facts-item">
+                    <div class="icon">
+                        <i class="lni-user"></i>
+                    </div>
+                    <div class="fact-count">
+                        <h3>{{ crtInfo.nbrMembre }}</h3>
+                        <h4>Membres</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="facts-item">
+                    <div class="icon">
+                        <i class="lni-user"></i>
+                    </div>
+                    <div class="fact-count">
+                        <h3>{{ crtInfo.nbrVolontaire }}+</h3>
+                        <h4>Volontaires</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="facts-item">
+                    <div class="icon">
+                        <i class="lni-heart"></i>
+                    </div>
+                    <div class="fact-count">
+
+                        <h3 id="likes">{{ crtInfo.nbrJaime }}</h3>
+                        <h4>les aiment</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Counter Section End -->
+
+
+
+<!-- Team section End -->
+    <section id="equipe" class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+        <div class="container">
+            <div class="row">
+                <div class="col-13 text-center mx-auto">
+                    <!-- Heading Text  -->
+                    <br> <br><br>
+                    <br> <br> <br>
+                    <h2 class="section-title">Notre Equipe </h2>
+                    <div class="line-shape"></div>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="team-member">
+                <div class="col-12">
+                    <!-- App Screenshots Slides  -->
+                    <div class="app_screenshots_slides owl-carousel">
+                        {% for membre in membres %}
+                            <div class="single-shot">
+
+                                <div class="row">
+
+                                    <div class="team-member">
+
+                                        <img class="rounded" src="{{ asset('uploads/membre/' ~ membre.imageName) }}" width="80">
+                                        <h4> {{ membre.nom }} </h4>
+                                        <p class="text-muted"> {{ membre.poste }}</p>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About -->
+
+
+
+<!-- ***** App Screenshots Area Start ***** -->
+
+{% include 'default/formation.html.twig' %}
+
+
+<section id="collab" class="ftco-section ftco-client">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <!-- Heading Text  -->
+                    <br> <br>
+                    <br>
+                    <h2 class="section-title">Nos Collaborateurs </h2>
+                    <div class="line-shape"></div>
+                    <br> <br>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-client owl-carousel">
+                    {% for collaborateur in collaborateurs %}
+                        <div class="item">
+                            <a href="#" class="client text-center p-5">
+                                <img src="{{ asset('uploads/collaborateur/' ~ collaborateur.imageName) }}"/>
+                                <br>
+                                <span> {{ collaborateur.nomCollaborateur }}</span>
+                            </a>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+{{ render(controller('AppBundle:Message:new')) }}
+
+
+
+<footer id="sticky-footer" class=" py-4 bg-dark">
+    <div class=" container align-items-center">
+        <p class=" text-light text-center col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Tous droits réservés  &copy;<script>document.write(new Date().getFullYear());</script><i class="fa fa-heart" aria-hidden="true"></i> par <span class=" text-center text-danger">Croissant rouge commité ezzahra </span>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    </div>
+</footer>
+
+<script src="{{ asset('assets/template2/js/jquery-min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/classie.js') }}"></script>
+<script src="{{ asset('assets/template2/js/color-switcher.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.mixitup.js') }}"></script>
+<script src="{{ asset('assets/template2/js/nivo-lightbox.js') }}"></script>
+<script src="{{ asset('assets/template2/js/owl.carousel.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.nav.js') }}"></script>
+<script src="{{ asset('assets/template2/js/scrolling-nav.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/wow.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.vide.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/form-validator.min.js') }}"></script>
+<script src="{{ asset('assets/template2/js/contact-form-script.js') }}"></script>
+<script src="{{ asset('assets/template2/js/main.js') }}"></script>
+
+
+<script src=""></script>
+
+<script src="{{ asset('assets/template1/vendor/jquery/jquery.min.js') }}"></script>
+
+<script src="{{ asset('assets/template1/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+
+<!-- Plugin JavaScript -->
+<script src="{{ asset('assets/template1/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!-- Contact form JavaScript -->
+<script src="{{ asset('assets/template1/js/jqBootstrapValidation.js') }}"></script>
+<script src="{{ asset('assets/template1/js/contact_me.js') }}"></script>
+
+
+<!-- Custom scripts for this template -->
+<script src="{{ asset('assets/template1/js/agency.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/aos.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/scrollax.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/main.js') }}"></script>
+<!-- Jquery-2.2.4 JS -->
+
+<script src="{{ asset('assets/template3partenaire/js/jquery-2.2.4.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/popper.min.js') }}"></script>
+<!-- Bootstrap-4 Beta JS -->
+<script src="{{ asset('assets/template3partenaire/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/plugins.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/slick.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/active.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
+<script>
+    $("#like").on("click", function(){
+        $.post("{{path("like")}}",function(data){
+            $("#likes").text(data);
+            $.notify("Merci <3 ");
+        })
+    });
+
+    $(document).on("click", ".gallery", function(){
+        var id = $(this).data("id");
+        console.log('======');
+       $.get("/event/gallery/"+id, function(data){
+            $('#gallery-modal .title').text(data.title);
+             $('#gallery-modal .description').text(data.description);
+              $('#gallery-modal .row').empty();
+             data.images.forEach(function(image){
+                  $('#gallery-modal .row').append('<div class="col-md-4"><img src="/uploads/event/'+image.imageName+'"></div>');
+             });
+            $('#gallery-modal').modal('show');
+        })
+        
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% set title="Collaborateur" %}
+
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <div class="box">
+        <div class="box-body">
+
+
+            <table class="table table-striped table-bordered table-hover" id="datatable">
+                <thead>
+
+                <tr>
+                    <th>Id</th>
+                    <th>Imagename</th>
+                    <th>Updatedat</th>
+                    <th>Nom du collaborateur</th>
+                    <th>Email du collaborateur</th>
+                    <th>Téléphone du collaborateur</th>
+                    <th>Spécification</th>
+                    <th>Actions</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                {% for collaborateur in collaborateurs %}
+                    <tr>
+                        <td><a href="{{ path('collaborateur_show', { 'id': collaborateur.id }) }}">{{ collaborateur.id }}</a></td>
+                        <td><img src="{{ asset('uploads/collaborateur/' ~ collaborateur.imageName) }}" width="90"></td>
+                        <td>{% if collaborateur.updatedAt %}{{ collaborateur.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <td>{{ collaborateur.nomCollaborateur }}</td>
+                        <td>{{ collaborateur.emailCollaborateur }}</td>
+                        <td>{{ collaborateur.telCollaborateur }}</td>
+                        <td>{{ collaborateur.specification }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ path('collaborateur_show', { 'id': collaborateur.id }) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ path('collaborateur_edit', { 'id': collaborateur.id }) }}">modifier</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <a href="{{ path('collaborateur_new') }}" class="btn btn-info" >Créer</a>
+
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+{% endblock %}
+
+
+
+
+
+

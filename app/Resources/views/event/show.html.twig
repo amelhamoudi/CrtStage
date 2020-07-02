@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% set title="Afficher la liste des événements" %}
+{% block content %}
+
+<div class="box">
+    <div class="box-body">
+    <h3>Event</h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ event.id }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <td><img src="{{ asset('uploads/event/' ~ event.imageName) }}" width="90"</td>
+            </tr>
+            <tr>
+                <th>Imagesize</th>
+                <td>{{ event.imageSize }}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if event.updatedAt %}{{ event.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nomevent</th>
+                <td>{{ event.nomEvent }}</td>
+            </tr>
+            <tr>
+                <th>Descriptionevent</th>
+                <td>{{ event.descriptionEvent }}</td>
+            </tr>
+            <tr>
+                <th>Lieuevent</th>
+                <td>{{ event.lieuEvent }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if event.dateDebut %}{{ event.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{% if event.dateFin %}{{ event.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('event_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+</div>
+
+{% endblock %}

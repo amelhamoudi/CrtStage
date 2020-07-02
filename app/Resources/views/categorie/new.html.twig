@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% set title="Ajouter collab" %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+    <div class="box">
+        <div class="box-body">
+
+
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input class="btn btn-success" type="submit" value="Ajouter" />
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

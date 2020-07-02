@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/owl.carousel.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/style2.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets/template3partenaire/css/responsive.css') }}">
+
+
+
+    <
+
+</head>
+
+<body>
+
+<!-- ***** App Screenshots Area Start ***** -->
+
+
+
+<section class="ftco-section ftco-client">
+    <div class="container">
+        <div class="row ftco-animate">
+            <div class="col-md-10">
+                <div class="carousel-client owl-carousel">
+                    {% for collaborateur in collaborateurs %}
+                        <div class="item">
+                            <a href="#" class="client text-center p-5">
+                                <img src="{{ asset('uploads/collaborateur/' ~ collaborateur.imageName) }}"/>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script src="{{ asset('assets/template3partenaire/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/aos.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/scrollax.min.js') }}"></script>
+<script src="{{ asset('assets/template3partenaire/js/main.js') }}"></script>
+<!-- Jquery-2.2.4 JS -->
+
+<script src="{{ asset('assets/template3partenaire/js/jquery-2.2.4.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/popper.min.js') }}"></script>
+<!-- Bootstrap-4 Beta JS -->
+<script src="{{ asset('assets/template3partenaire/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/plugins.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/slick.min.js') }}"></script>
+
+<script src="{{ asset('assets/template3partenaire/js/active.js') }}"></script>
+
+</body>
+</html>

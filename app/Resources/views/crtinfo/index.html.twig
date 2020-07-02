@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% set title="Afficher les informations du CRT" %}
+
+{% block css %}
+{% endblock css %}
+{% block content %}
+<div class="box">
+    <div class="box-body">
+
+
+        <table class="table table-striped table-bordered table-hover" id="datatable">
+
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de formation</th>
+                <th>Nombre de membre</th>
+                <th>Nombre de volontaire</th>
+                <th>Nombre de jaime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for crtInfo in crtInfos %}
+            <tr>
+                <td><a href="{{ path('crtinfo_show', { 'id': crtInfo.id }) }}">{{ crtInfo.id }}</a></td>
+                <td>{{ crtInfo.nbrFormation }}</td>
+                <td>{{ crtInfo.nbrMembre }}</td>
+                <td>{{ crtInfo.nbrVolontaire }}</td>
+                <td>{{ crtInfo.nbrJaime }}</td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ path('crtinfo_show', { 'id': crtInfo.id }) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ path('crtinfo_edit', { 'id': crtInfo.id }) }}">modifier</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('crtinfo_new') }}" class="btn btn-info">Créer</a>
+
+    </div></div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% set title="Afficher la liste des événements" %}
+
+{% block css %}
+{% endblock css %}
+{% block content %}
+<div class="box">
+    <div class="box-body">
+
+
+        <table class="table table-striped table-bordered table-hover" id="datatable">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image name</th>
+                <th>Image size</th>
+                <th>Updated at</th>
+                <th>Nom de l'événement </th>
+                <th>Description de l'événement</th>
+                <th>Lieu de l'événement</th>
+                <th>Date de debut</th>
+                <th>Date de fin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                <td><img src="{{ asset('uploads/event/' ~ event.imageName) }}" width="90"></td>
+                <td>{{ event.imageSize }}</td>
+                <td>{% if event.updatedAt %}{{ event.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ event.nomEvent }}</td>
+                <td>{{ event.descriptionEvent }}</td>
+                <td>{{ event.lieuEvent }}</td>
+                <td>{% if event.dateDebut %}{{ event.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if event.dateFin %}{{ event.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <div class="btn-group">
+                        <a href="{{ path('event_show', { 'id': event.id }) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ path('event_edit', { 'id': event.id }) }}">modifier</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+            <a href="{{ path('event_new') }}" class="btn btn-info" >Créer</a>
+
+    </div></div>
+
+{% endblock %}
+
+

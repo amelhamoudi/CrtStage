@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crt Ezzahra - {{title is defined ? title : ''}}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/skins/skin-blue-light.min.css')}}">
+    {% block css %}
+    {% endblock css %}
+    <link rel="stylesheet" href="{{asset('assets/plugins/adminlte/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/skins/skin-blue.min.css')}}">
+
+
+    <link rel="stylesheet" href="{{asset('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/datatables.net/css/rowReorder.dataTables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/datatables.net/css/responsive.dataTables.min.css')}}">
+
+    <link href="{{asset('assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')}}"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue-light sidebar-mini fixed  ">
+
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">Crt</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">Crt Ezzahra</span>
+            <img src="{{ asset('assets/images/test.png') }}" width="160px" height="100px" alt="">
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- Notifications Menu -->
+                    <li class="dropdown notifications-menu">
+                        <!-- Menu toggle button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">Notifications</li>
+                            <li>
+                                <!-- Inner Menu: contains the notifications -->
+                                <ul class="menu">
+
+
+
+                                    <!-- end notification -->
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="{{asset('assets/img/user.jpg')}}" class="user-image" alt="User Image">
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">{{ app.user ? app.user.username }} </span>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+
+                                <img src="{{ asset('assets/images/test.png') }}" class="img-circle" alt="User Image">
+
+                                <p>
+
+                                    <small>connecté depuis : {{app.user ? app.user.lastlogin|date('Y-m-d H:i:s') }}</small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Compte</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="{{ path('fos_user_security_logout') }}" class="btn btn-default btn-flat">se déconnecter</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+
+
+
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li><a href="{{path('homepage')}}"><i class="fa fa-dashboard"></i> <span>Accueil</span></a></li>
+            <li><a href="{{path('event_index')}}"><i class="fa fa-list"></i> <span>Evenement</span></a></li>
+            <li><a href="{{path('gallerie_index')}}"><i class="fa fa-file"></i> <span>Gallerie</span></a></li>
+            <li><a href="{{path('media_index')}}"><i class="fa fa-list"></i> <span>Media</span></a></li>
+            <li><a href="{{path('collaborateur_index')}}"><i class="fa fa-cog"></i> <span>Collaborateur</span></a></li>
+            <li><a href="{{path('categorie_index')}}"><i class="fa fa-cog"></i> <span>Categorie</span></a></li>
+            <li><a href="{{path('jour_index')}}"><i class="fa fa-cog"></i> <span>Journée</span></a></li>
+            <li><a href="{{path('formation_index')}}"><i class="fa fa-cog"></i> <span>Formation</span></a></li>
+            <li><a href="{{path('membre_index')}}"><i class="fa fa-cog"></i> <span>Membre</span></a></li>
+            <li><a href="{{path('crtinfo_index')}}"><i class="fa fa-cog"></i> <span>A propos Croissant rouge</span></a></li>
+            <li><a href="{{path('message_index')}}"><i class="fa fa-map-marker"></i> <span>Message</span></a></li>
+            <li><a href="{{path('user_index')}}"><i class="fa fa-map-marker"></i> <span>Utilisateur</span></a></li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            {{title is defined ? title : ''}}
+
+        </h1>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+        {% for label, flashes in app.session.flashbag.all %}
+            {% for flash in flashes %}
+                <div class="alert alert-{{ label }}">
+                    {{ flash }}
+                </div>
+            {% endfor %}
+
+        {% endfor %}
+
+        {% block content %}
+
+
+        {% endblock content %}
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+
+</div>
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <img src="" class="imagepreview" style="width: 100%;" >
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ./wrapper -->
+<div class="modal modal-danger fade" id="confirm-delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Vous etes sur?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Supprimer une donne supprimera également tous les donnes liées</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">annuler</button>
+                <button type="button" class="btn btn-outline btn-delete">supprimer</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal -->
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+
+<!-- Bootstrap 3.3.7 -->
+<script src="{{asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('assets/js/adminlte.min.js')}}"></script>
+
+<script src="{{asset('assets/plugins/fastclick/lib/fastclick.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ar.min.js')}}"></script>
+
+<!-- SlimScroll -->
+<script src="{{asset('assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+
+<script src="{{asset('assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js')}}"></script>
+
+<script src="{{asset('assets/plugins/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/plugins/datatables.net/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('assets/plugins/datatables.net/js/dataTables.rowReorder.min.js')}}"></script>
+
+{% block js %}
+{% endblock js %}
+<script src="{{asset('assets/js/main.js')}}"></script>
+
+<script>
+
+    $('.btn.delete').on('click', function(e) {
+        e.preventDefault();
+        $('#confirm-delete').modal('toggle');
+    });
+    $('.modal .btn-delete').on('click',function(){
+        $('.btn.delete').parent('form').submit();
+
+    });
+
+</script>
+</body>
+</html>

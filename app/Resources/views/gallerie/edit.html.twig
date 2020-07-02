@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% set title="Modifier les détails d'une gallerie" %}
+{% block content %}
+    <div class="box">
+        <div class="box-body">
+
+
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input class="btn btn-success" type="submit" value="Modifier" />
+            {{ form_end(edit_form) }}
+
+
+            {{ form_start(delete_form) }}
+            <input  class="btn btn-danger delete" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>
+{% endblock %}
+
+
+
